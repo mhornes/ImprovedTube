@@ -97,7 +97,7 @@ const Menu = {
                                                         for (let i in object) {
                                                             if (object[i].type) {
                                                                 if (/(button|select|shortcut|slider|switch)/.test(object[i].type)) {
-                                                                    if (i.indexOf(string) !== -1 || (object[i].tags && object[i].tags.indexOf(string) !== -1)) {
+                                                                    if (i.toLowerCase().indexOf(string) !== -1 || (object[i].tags && object[i].tags.toLowerCase().indexOf(string) !== -1)) {
                                                                         if (object[i].type.indexOf('button') === -1 || !object[i].label) {
                                                                             list[i] = object[i];
                                                                         }
@@ -118,7 +118,7 @@ const Menu = {
                                                         return result;
                                                     }
 
-                                                    search(component.value, Menu);
+                                                    search(component.value.toLowerCase(), Menu);
 
                                                     let results = document.createElement('div');
 
